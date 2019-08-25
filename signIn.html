@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CIU Library | Sign In</title>
+    <link rel="icon" type="image/png" href="img/ciu_logo.png">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+    <!--Font Awesome Kit-->
+    <script src="https://kit.fontawesome.com/2f46af675b.js"></script>
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <div style="background-color: #2E3192;">
+        <p class="navbar-brand" id="mobile-header-text">CIU Library and Learning Resource Center</p>
+        <nav class="navbar navbar-expand-sm navbar-dark navbar-custom justify-content-between" id="top-nav">
+            <header>
+                <a class="navbar-brand" href="#"><img src="img/ciu_logo.png" alt="CIU Logo" height="100px"
+                        width="auto"><span id="desktop-header-text"> CIU Library and Learning Resource Center</span></a>
+            </header>
+            <a class="nav-link hvr-grow" href="sign_in.php"><i class="fas fa-user nav-icon"></i><br>
+                Sign In
+            </a>
+        </nav>
+    </div>
+    <!--Navbar-->
+
+    <!--Welcome Section with searchbar etc-->
+    <div class="nav-window">
+
+        <div class="container">
+            <div class="row">
+
+                <!--Menu cards-->
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="index.html" class="menu-card hvr-grow">
+                        <img src="img/home_icon.png" alt="home_icon"><br>
+                        Home
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/about_icon.png" alt="about_icon"><br>
+                        About
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/campus_icon.png" alt="campus_icon"><br>
+                        CIU
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/books_icon.png" alt="books_icon"><br>
+                        Books
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/news_icon.png" alt="news_icon"><br>
+                        News
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/contact_icon.png" alt="contact_icon"><br>
+                        Contact
+                    </a>
+                </div>
+                <!--Menu cards-->
+
+                <!--Sign In From id="sign_in_form" -->
+                <div class="col-12 text-center sign-in-container">
+                    <form class="text-left welcome-text-container"
+                        action="http://library.ciu.edu.bd/cgi-bin/koha/opac-user.pl" method="post" name="auth"
+                        id="modalAuth">
+                        <input type="hidden" name="koha_login_context" value="opac" />
+                        <div class="form-group">
+                            <label for="muserid">Student ID<span style="color: red;">*</span></label>
+                            <input type="text" class="form-control" id="muserid" name="userid" placeholder="ID"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mpassword">Password<span style="color: red;">*</span></label>
+                            <input type="password" class="form-control" id="mpassword" name="password"
+                                placeholder="Password" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" value="Log in" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+                <!--Sign In From-->
+            </div>
+        </div>
+
+        <!--Footer-->
+        <!--Section Shape-->
+        <div>
+            <svg width='100%' height='150px' viewBox="0 0 100 100" preserveAspectRatio="none"
+                style='background-color: none'>
+
+                <polygon points="0,100 100,100 0,0 0,100" style="fill: #2E3192;" />
+            </svg>
+        </div>
+        <footer class="container-fluid">
+            <div class="row" style="color: white;">
+                <div
+                    class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center footerChildContainerBorder footerChildContainer">
+                    <h2>About</h2>
+                    <hr class="bg-light">
+                    <p>Chittagong Independent University</p>
+                    <p>Chittagong, Bangladesh</p>
+                    <p>All Rights Reserved</p>
+                </div>
+
+                <div
+                    class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center footerChildContainerBorder footerChildContainer">
+                    <h2>Contact</h2>
+                    <hr class="bg-light">
+                    <p>Jamal Khan, Chittagong</p>
+                    <p>Bangladesh</p>
+                    <button class="btn btn-outline-light"><i class="fas fa-phone-volume"></i> 555-555-5555</button>
+                    <p><a class="footer-link" href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a class="footer-link" href="#"><i class="fas fa-envelope-square"></i></a></p>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center footerChildContainer">
+                    <h2>News letter</h2>
+                    <hr class="bg-light">
+                    <form class="text-left">
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Fisrt Name">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="eMail">Email</label>
+                            <input type="email" class="form-control" id="eMail" placeholder="john@email.com">
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-light">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <!--Footer-->
+
+        <!--Scroll Up Button-->
+        <a href="#top-nav" class="scroll-up-btn fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-arrow-up fa-stack-1x fa-inverse"></i>
+        </a>
+        <!--Scroll Up Button-->
+
+    </div>
+
+
+
+    <!--jQuery JS-->
+    <script src="js/jQuery.js"></script>
+    <!--Popper JS-->
+    <script src="js/popper.js"></script>
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
