@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CIU Library and Learning Resources Center</title>
+    <link rel="icon" type="image/png" href="img/ciu_logo.png">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+    <!--Font Awesome Kit-->
+    <script src="https://kit.fontawesome.com/2f46af675b.js"></script>
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!--Styling for the horizontal tile slider-->
+    <link rel="stylesheet" type="text/css" href="css/inertialSliderStyle.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <div style="background-color: #2E3192;">
+        <p class="navbar-brand" id="mobile-header-text">
+            CIU Library and Learning Resources Center
+        </p>
+        <nav class="navbar navbar-expand-sm navbar-dark navbar-custom justify-content-between" id="top-nav">
+            <header>
+                <a class="navbar-brand" href="#"><img src="img/ciu_logo.png" alt="CIU Logo" height="100px"
+                        width="auto"><span id="desktop-header-text"> CIU Library and Learning Resource Center</span></a>
+            </header>
+            <a class="nav-link hvr-grow" href="javascript:togglePopupMenu('signIn');">
+                <i class="fas fa-user nav-icon"></i><br>
+                Sign In
+            </a>
+        </nav>
+    </div>
+    <!--Navbar-->
+
+    <!--Menu Tiles, Search Bar, Welcome Text-->
+    <nav class="nav-window">
+
+        <div class="container">
+            <div class="row">
+
+                <!--Menu cards-->
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="index.php" class="menu-card hvr-grow">
+                        <img src="img/home.png" alt="home_icon"><br>
+                        Home
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/about.png" alt="about_icon"><br>
+                        About
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/campus_icon.png" alt="campus_icon"><br>
+                        Services
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="javascript:togglePopupMenu('resources');" class="menu-card hvr-grow">
+                        <img src="img/book.png" alt="books_icon"><br>
+                        Resources
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/news.png" alt="news_icon"><br>
+                        News
+                    </a>
+                </div>
+                <div class="col-4 col-sm-2 menuCardContainer">
+                    <a href="" class="menu-card hvr-grow">
+                        <img src="img/contact_icon.png" alt="contact_icon"><br>
+                        Contact
+                    </a>
+                </div>
+                <!--Menu cards-->
+
+                <!--Welcome Text-->
+                <div class="col-12 welcome-container">
+                    <div class="welcome-text-container">
+                        <!--Welcome Text-->
+                        <h3>Welcome to the CIU library</h3>
+                        <p class="lead">
+                            Offering all the latest books and study metarials for the CIU students and faculty
+                            members.
+                        </p>
+                        <!--Welcome Text-->
+
+                        <!--Form-->
+                        <form name="searchform" method="get"
+                            action="http://library.ciu.edu.bd/cgi-bin/koha/opac-search.pl" id="searchform"
+                            autocomplete="off">
+                            <h4 style="text-align: left">Search</h4>
+                            <hr class="m-0 mb-2">
+                            <div class="form-row p-1">
+                                <div class="col-sm-6 p-0">
+                                    <input type="text" name="q" placeholder="Book Name"
+                                        class="form-control search-text-input">
+                                </div>
+                                <div class="col-sm-4 p-0">
+                                    <select name="idx" id="masthead_search" class="form-control search-text-input">
+                                        <option value="">Library catalog</option>
+                                        <option value="ti">Title</option>
+                                        <option value="au">Author</option>
+                                        <option value="su">Subject</option>
+                                        <option value="nb">ISBN</option>
+                                        <option value="se">Series</option>
+                                        <option value="callnum,phr">Call number</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 p-0">
+                                    <button type="submit" class="btn search-button"><i class="fas fa-search"></i>
+                                        <span class="search-btn-text">Search</span></button>
+                                </div>
+                            </div>
+                        </form>
+                        <!--Form-->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+    <!--Menu tiles, Search bar, Welcome Text-->
+
+    <!--Video-->
+    <div style="background-color: #F2B121;" class="book-section container-fluid">
+        <h1>LLRC AT A Glance</h1>
+        <iframe id="video" width="100%" height="315" src="https://www.youtube.com/embed/cKReB7BxNyo" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <!--Video-->
+
+    <!--New Arrival Section-->
+    <div id="new-arrival" class="book-section">
+        <div class="container-fluid new-arrival-container">
+            <h1 style="color: white; border-bottom: 2px solid white;">New Arrivals</h1>
+
+            <!--This order of leftArrowButton-tileSliderContainer-rightArrowButton must be ensured
+            since our script uses the sibling porperty to locate the tileSliderContainer
+            when the button is pressed-->
+            <div class="parentSliderContainer">
+                <button class="leftArrowButton" type="button">
+                    <img src="img/left-arrow-white.svg" height="auto" width="100%">
+                </button>
+
+
+                <div class="tileSliderContainer">
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--tileSliderContainer-->
+
+                <button class="rightArrowButton" type="button">
+                    <img src="img/right-arrow-white.svg" height="auto" width="100%">
+                </button>
+            </div>
+            <!--parentSliderContainer-->
+
+            <p><a href="javascript:viewAll('new-arrival', '#2E3192');" class="btn btn-primary">View All</a></p>
+            <hr class="bg-light">
+        </div>
+
+        <!--Section Shape-->
+        <div style="position: relative; top: -1px;">
+            <svg width='100%' height='150px' viewBox="0 0 100 100" preserveAspectRatio="none"
+                style='background-color: none'>
+
+                <polygon points="0,0 100,0 100,100 0,1 0,0" style="fill: #2E3192;" />
+            </svg>
+        </div>
+    </div>
+    <!--New Arrival Section-->
+
+    <!--New Arrival Section View All-->
+    <div class="book-section" id="new-arrivalViewAll" style="display: none;">
+        <div class="container-fluid new-arrival-container">
+            <h1 style="color: white; border-bottom: 2px solid white;">New Arrivals</h1>
+
+            <div class=" row">
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="bg-light">
+
+        </div>
+
+    </div>
+    <!--New Arrival Section View All-->
+
+    <!--Categories-->
+    <div id="categories" class="book-section">
+        <div class="container-fluid">
+            <h1>Categories</h1>
+
+            <!--This order of leftArrowButton-tileSliderContainer-rightArrowButton must be ensured
+            since our script uses the sibling porperty to locate the tileSliderContainer
+            when the button is pressed-->
+            <div class="parentSliderContainer">
+                <button class="leftArrowButton" type="button">
+                    <img src="img/left-arrow.svg" height="auto" width="100%">
+                </button>
+
+
+                <div class="tileSliderContainer">
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--tileSliderContainer-->
+
+                <button class="rightArrowButton" type="button">
+                    <img src="img/right-arrow.svg" height="auto" width="100%">
+                </button>
+            </div>
+            <!--parentSliderContainer-->
+
+            <p><a href="javascript:viewAll('categories','');" class="btn btn-primary">View
+                    All</a></p>
+            <hr>
+        </div>
+    </div>
+    <!--Categories-->
+    <!--Categories View All-->
+    <div class="book-section" id="categoriesViewAll" style="display: none;">
+        <div class="container-fluid">
+            <h1>Categories</h1>
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book4.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="card bg-light team">
+                        <img class="card-img img-fluid" src="img/book3.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="tiles card bg-light team">
+                        <img class="card-img img-fluid" src="img/book2.jpg" alt="Card image cap">
+                        <div class="tiles card-img-overlay text-center d-flex flex-column justify-content-center">
+                            <div class="book-caption">
+                                <h5 class="card-title">Michael Jacob</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
+                                <a href="#" class="btn btn-danger"><i class="fas fa-cart-plus"> To Cart</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Categories View All-->
+
+    <!--Library Info-->
+    <div class="container-fluid book-section">
+        <h1>Informations</h1>
+        <div class="row">
+            <div class="col-lg-6 mt-5">
+                <h3>Calendar</h3>
+                <hr>
+                <div style="max-width: 100%; overflow-x: auto;">
+                    <iframe
+                        src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23b6c2f0&amp;ctz=Asia%2FDhaka&amp;src=ZW4uYmQjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%230B8043&amp;showTitle=0&amp;showPrint=0&amp;showTz=1"
+                        style="border-width:0; min-width: 380px;" width="100%" height="400" frameborder="0"
+                        scrolling="no" id="calendar">
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-5" id="library-timings">
+                <h3>Library Timings</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-12 col-md-4 col-sm-12">
+                        <p class="lead" style="font-weight: 500;">During the semester</p>
+                        <p>Sun to Wed : 8.30 am to 9.00 pm</p>
+                        <p>Thursday : 8.30 am to 7.00 pm</p>
+                        <p>Friday & Sat : 10.00 am to 6.30 pm</p>
+                    </div>
+                    <div class="col-lg-12 col-md-4 col-sm-12">
+                        <p class="lead" style="font-weight: 500;">During Off semester</p>
+                        <p>Sun to Thurs : 8:30 am to 5:00 pm</p>
+                        <p>Friday & Sat : <span style="color: red;">Closed</span></p>
+                    </div>
+                    <p class="col-lg-12 col-md-4 col-sm-12" style="color: brown;">
+                        N.B: Check-out time from the library is 15 minutes prior to the library closes
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <h3>Location</h3>
+                <hr>
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="100%" height="400" id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=chittagong%20independent%20university&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <!--Section Shape-->
+    <div style="position: relative; top: 1px;">
+        <svg width='100%' height='150px' viewBox="0 0 100 100" preserveAspectRatio="none"
+            style='background-color: none'>
+
+            <polygon points="0,100 100,100 0,0 0,1 0,100" style="fill: #2E3192;" />
+        </svg>
+    </div>
+    <footer class="container-fluid">
+        <div class="row" style="color: white;">
+            <div
+                class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center footerChildContainerBorder footerChildContainer">
+                <h2>About</h2>
+                <hr class="bg-light">
+                <p>Chittagong Independent University</p>
+                <p>Chittagong, Bangladesh</p>
+                <p>All Rights Reserved</p>
+            </div>
+
+            <div
+                class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center footerChildContainerBorder footerChildContainer">
+                <h2>Address</h2>
+                <hr class="bg-light">
+                <p>Ruksana Manjil, Campus – 3, 16 Jamal Khan Road</p>
+                <p>Chittagong, Bangladesh</p>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center footerChildContainer">
+                <h2>Contact</h2>
+                <hr class="bg-light">
+                <button class="btn btn-outline-light"><i class="fas fa-phone-volume"></i> 555-555-5555</button>
+                <p>
+                    <a class="footer-link" href="#">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a class="footer-link" href="#">
+                        <i class="fas fa-envelope-square"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+
+    <!--Scroll Up Button-->
+    <a href="#top-nav" class="scroll-up-btn fa-stack fa-2x">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-arrow-up fa-stack-1x fa-inverse"></i>
+    </a>
+    <!--Scroll Up Button-->
+
+
+    <!--Pop Up Menu-->
+    <div id="resources" class="menu-pop-up d-flex align-items-center justify-content-center">
+        <div class="popup-close-btn">
+            <a href="javascript:togglePopupMenu('resources');" class="close-button">
+                <div class="close-btn-in">
+                    <div class="close-button-block"></div>
+                    <div class="close-button-block"></div>
+                </div>
+                <div class="close-btn-out">
+                    <div class="close-button-block"></div>
+                    <div class="close-button-block"></div>
+                </div>
+            </a>
+        </div>
+
+        <!--Sub Menu-->
+        <div class="row popup-submenu-container">
+            <div class="col-6 menuCardContainer">
+                <a href="" class="menu-card hvr-grow">
+                    <img src="img/campus_icon.png" alt="campus_icon"><br>
+                    Services
+                </a>
+            </div>
+            <div class="col-6 menuCardContainer">
+                <a href="" class="menu-card hvr-grow">
+                    <img src="img/books_icon.png" alt="books_icon"><br>
+                    Resources
+                </a>
+            </div>
+            <div class="col-6 menuCardContainer">
+                <a href="" class="menu-card hvr-grow">
+                    <img src="img/news_icon.png" alt="news_icon"><br>
+                    News
+                </a>
+            </div>
+            <div class="col-6 menuCardContainer">
+                <a href="" class="menu-card hvr-grow">
+                    <img src="img/contact_icon.png" alt="contact_icon"><br>
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--Pop Up Menu-->
+
+    <!--Pop Up Sign In-->
+    <div id="signIn" class="menu-pop-up d-flex align-items-center justify-content-center">
+        <div class="popup-close-btn">
+            <a href="javascript:togglePopupMenu('signIn');" class="close-button">
+                <div class="close-btn-in">
+                    <div class="close-button-block"></div>
+                    <div class="close-button-block"></div>
+                </div>
+                <div class="close-btn-out">
+                    <div class="close-button-block"></div>
+                    <div class="close-button-block"></div>
+                </div>
+            </a>
+        </div>
+
+        <form class="text-left welcome-text-container" action="http://library.ciu.edu.bd/cgi-bin/koha/opac-user.pl"
+            method="post" name="auth" id="modalAuth">
+            <input type="hidden" name="koha_login_context" value="opac" />
+            <div class="form-group">
+                <label for="muserid">Student ID<span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="muserid" name="userid" placeholder="ID" required>
+            </div>
+            <div class="form-group">
+                <label for="mpassword">Password<span style="color: red;">*</span></label>
+                <input type="password" class="form-control" id="mpassword" name="password" placeholder="Password"
+                    required>
+            </div>
+            <div class="text-center">
+                <button type="submit" value="Log in" class="btn btn-primary">Sign In</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!--jQuery JS-->
+    <script src="js/jQuery.js"></script>
+    <!--Popper JS-->
+    <script src="js/popper.js"></script>
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap.js"></script>
+    <!--Javascript for the horizontal tile slider-->
+    <script type="text/javascript" src="js/inertialSliderScript.js"></script>
+    <!--Custom Script-->
+    <script type="text/javascript" src="js/customScript.js"></script>
+    <!--Loading Screen-->
+    <script type="text/javascript" src="js/loading_screen.js"></script>
+
+</body>
+
+</html>
